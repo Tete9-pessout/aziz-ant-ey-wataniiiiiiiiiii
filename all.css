@@ -1,0 +1,49 @@
+ footer{
+    padding:28px 0;
+    border-top:1px solid #e2e8f0;
+    background:#fff;
+    height: 90px;        /* كان 70px – صار أكبر */
+    min-height: 115px;
+    max-height: 130px;
+ 
+    }
+
+    .foot{
+    display:flex;
+    gap:16px;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;  
+    } 
+
+   .brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+  font-size:18px;
+  color:#fff;
+}
+
+
+  .brand img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  border-radius:50%;   /* احذفها إذا بدك الشعار مربع */
+  background:#fff;     /* يخلي الشعار واضح */
+  padding:4px;
+}
+
+.nav{
+  background: var(--nav-bg);
+  color:#fff;
+  position: fixed;      /* ثابت */
+  top:0;
+  right:0;
+  left:0;
+  z-index:9999;         /* فوق كل شيء */
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+

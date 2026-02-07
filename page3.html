@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>فريق عزيز انت يا وطني </title>
+  <link rel="icon" href="oop2.png" sizes="16x16" type="image/png" >
+  <link rel="stylesheet" href="all.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="wrap">
+   <div class="brand">
+   <img src="oop.jpeg" alt="شعار الفريق">
+   <br>
+   <span>عزيز انت يا وطني</span>
+   </div>
+    
+    <nav class="links">
+    <a class="active" href="index.html">من نحن</a>
+    <a class="page2"href="page2.html">انجازاتنا</a>
+    <a class="page3"href="page3.html">فرصنا التطوعية الحالية</a>
+    <a href="page4.html">انضم الينا</a>
+      </nav>
+    </div>
+    
+  </header>
+
+  <main>
+    <section class="hero">
+
+      <!-- الخط المتحرك -->
+<svg class="page-line" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
+<path d="M0,190
+                 C220,40 360,40 520,160
+                 C680,280 820,80 1000,170
+                 C1100,220 1160,210 1200,210"/>
+</svg>
+
+  <div class="header">
+    <h1>فرصنا التطوعية الحالية</h1>
+    <p>اختر الفرصة المناسبة وسجّل بسهولة</p>
+  </div>
+ <br>
+ <br>
+
+<div class="container">
+  <div class="cards" id="opportunities"></div>
+</div>
+
+<br>
+  
+
+    </section>
+    </main>
+
+  
+    
+
+
+
+
+
+ <footer>
+    <div class="container foot">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="oop.jpeg" alt="شعار مصغر" style="width:36px;height:36px;border-radius:50%"/>
+        <div>
+          <strong>فريق عزيز انت يا وطني</strong><br/>
+          <span class="sub">© <span id="year"></span> جميع الحقوق محفوظة.</span>
+        </div>
+      </div>
+      <div class="sub">صُمِّم بحبّ بواسطة المتطوعين🤍</div>
+    </div>
+  </footer>
+   
+</body>
+</html>
+
+
+<style>
+
+*{box-sizing:border-box}
+body{margin:0;font-family:'Tajawal',sans-serif;background:#f6f7fb}
+
+.nav{
+   background:#000000;
+   color:#fff;
+   position:sticky;
+   top:0;
+   z-index:10;
+   box-shadow:0 8px 20px rgba(0,0,0,.12);
+    }
+
+.nav .wrap{
+  max-width:980px;margin:0 auto;padding:14px 16px;
+  display:flex;gap:10px;align-items:center;justify-content:space-between
+    }
+
+.links{display:flex;gap:10px}
+
+.links a{
+      color:#fff;text-decoration:none;padding:10px 12px;border-radius:12px;
+      background:rgba(255,255,255,.14)
+    }
+
+    
+.links a.page3{background:#fff;color:#000000}
+
+main{max-width:980px;margin:24px auto;padding:0 16px}
+
+    /* ===== الكرت ===== */
+.hero{
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0,0,0,.06);
+  padding: 22px;
+    }
+
+    /* ===== الخط المتحرك (خلف النص) ===== */
+.page-line{
+  position:absolute;
+  top: 30px;
+  left: 10px;
+  width: min(920px, 92vw);
+  height: 260px;
+  pointer-events:none;
+  transform: rotate(-10deg);
+  z-index:0;   /* خلف */
+  opacity:.25; /* خفيف حتى لا يغطي النص */
+    }
+
+  .page-line path{
+   fill:none;
+   stroke:#000000;
+   stroke-width:7;
+   stroke-linecap:round;
+   stroke-dasharray:2200;
+   stroke-dashoffset:2200;
+   animation: drawLine 3s ease-in-out infinite alternate;
+    }
+
+  @keyframes drawLine{
+  from{stroke-dashoffset:2200}
+  to{stroke-dashoffset:0}
+    }
+
+    /* ===== النص فوق ===== */
+  .hero-content{
+   position:relative;
+   z-index:2;
+    }
+
+   h1{margin:0 0 6px;font-size:34px}
+   p{margin:0; line-height:1.9; font-size:18px}
+   
+   .wrap{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 36px 16px 60px;
+    }
+
+   .title{
+    text-align:center;
+    margin: 0 0 22px;
+    font-weight: 800;
+    letter-spacing: .2px;
+    font-size: 30px;
+    }
+
+    .subtitle{
+    text-align:center;
+    margin: -10px 0 30px;
+    color: var(--muted);
+    font-size: 16px;
+    }
+
+    .container{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 16px 50px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:14px;
+}
+
+.card{
+  grid-column: span 4;
+  background: var(--card);
+  color: var(--text);
+  border-radius: var(--radius);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: var(--shadow2);
+  padding: 18px;
+  position:relative;
+  overflow:hidden;
+  transition: transform .18s ease, box-shadow .18s ease;
+  --radius:26px;  
+}
+
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-90px -90px auto auto;
+  width:240px;
+  height:240px;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 0, 0, 0.18), transparent 60%);
+  transform: rotate(18deg);
+  pointer-events:none;
+}
+
+.badge{
+  position:absolute;
+  top: 14px;
+  left: 14px;
+  padding:7px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  color:#fff;
+  box-shadow:0 10px 18px rgba(0,0,0,.10);
+}
+
+.available{ background: linear-gradient(135deg, #22c55e, #16a34a); }
+.soon{ background: linear-gradient(135deg, #f59e0b, #d97706); }
+
+.card h3{
+  margin: 6px 0 10px;
+  font-size:18px;
+  font-weight:900;
+  padding-left: 90px; /* مساحة للبادج */
+}
+
+.card p{
+  margin:0 0 12px;
+  color:#334155;
+  line-height:1.9;
+  font-size:14px;
+}
+
+.meta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+
+.chip{
+  padding:7px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  border:1px solid transparent;
+}
+
+.chip.loc{
+  background: rgba(30,143,28,.10);
+  color: #166534;
+  border-color: rgba(30,143,28,.14);
+}
+
+.chip.date{
+  background: rgba(14,165,233,.10);
+  color: #075985;
+  border-color: rgba(14,165,233,.14);
+}
+
+.btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+  padding:11px 14px;
+  border-radius:16px;
+  text-decoration:none;
+  font-weight:900;
+  color:#000000;
+  background: linear-gradient(135deg, var(--accent2), #55636a);
+  transition:.18s;
+}
+
+.btn:hover{
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.btn.disabled{
+ 
+  cursor:not-allowed;
+  pointer-events:none;
+}
+
+@media (max-width: 980px){
+  .card{ grid-column: span 6; }
+}
+
+@media (max-width: 560px){
+  .card{ grid-column: span 12; }
+  header h1{ font-size:28px; }
+}
+
+
+    
+   
+
+</style>
+
+<script>
+const yearEl = document.getElementById('year');
+if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+
+ (function(){
+      const wrap  = document.querySelector('.gallery-wrap');
+      const track = document.querySelector('.gallery-track');
+      if (!wrap || !track) return;
+ const originals = Array.from(track.children);
+
+
+ function ensureLength(){
+        const need = wrap.clientWidth * 2;
+        while (track.scrollWidth < need){
+          originals.forEach(el => track.appendChild(el.cloneNode(true)));
+        }
+      }
+      ensureLength();
+
+function getGap(){
+        const s = getComputedStyle(track);
+        const g = s.gap || s.columnGap || '12px';
+        return g.endsWith('px') ? parseFloat(g) : 12;
+      }
+      let gap = getGap();
+
+      
+      let x = 0;               
+      let speed = 36;           
+      let prev = performance.now();
+
+function step(now){
+        const dt = (now - prev) / 1000; 
+        prev = now;
+
+        x -= speed * dt;
+
+const first = track.children[0];
+        if (first){
+          const w = first.offsetWidth + gap;
+        
+          if (-x >= w){
+            track.appendChild(first);
+            x += w;
+          }
+        }
+
+track.style.transform = `translate3d(${x}px,0,0)`;
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+
+   
+window.addEventListener('resize', () => {
+        ensureLength();
+        gap = getGap();
+      });
+    })();
+
+ const opportunities = [
+  {
+    title: "حملة ترفيهية للأطفال",
+    description: "تنفيذ أنشطة ترفيهية وتعليمية للأطفال في مؤسسات مجتمعية.",
+    location: "عمّان",
+    date: "15 شباط 2026",
+    status: "متاح",
+    link: "https://www.nahno.org/project_volunteer/%D8%AC%D8%B1%D8%B3-%D8%A7%D9%84%D9%81%D8%B1%D8%AD-%D9%81%D9%8A-%D8%B1%D9%88%D8%B6%D8%A9-%D8%A3%D8%B1%D8%B6-%D8%A7%D9%84%D9%85%D8%B9%D8%AC%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B5%D8%BA%D9%8A%D8%B1%D8%A9-44327"
+  },
+  {
+    title: "حملة توعوية صحية",
+    description: "المشاركة في نشر الوعي حول الصحة العامة والوقاية.",
+    location: "الزرقاء",
+    date: "20 شباط 2026",
+    status: "متاح",
+    link: "register.html?op=health"
+  },
+  {
+    title: "فرز ملابس خيرية",
+    description: "فرز وتجهيز الملابس للتوزيع على الأسر المحتاجة.",
+    location: "عمّان",
+    date: "25 شباط 2026",
+    status: "متاح",
+    link: "register.html?op=clothes"
+  },
+  {
+    title: "نشاط بيئي – زراعة أشجار",
+    description: "المشاركة في حملة زراعة أشجار للحفاظ على البيئة.",
+    location: "مادبا",
+    date: "1 آذار 2026",
+    status: "قريباً",
+    link: "#"
+  }
+];
+
+const container = document.getElementById("opportunities");
+
+function statusClass(status){
+  return status === "متاح" ? "available" : "soon";
+}
+
+opportunities.forEach(op => {
+  const s = statusClass(op.status);
+  const disabled = (op.status !== "متاح");
+
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <div class="badge ${s}">${op.status}</div>
+
+    <div class="content">
+      <h3>${op.title}</h3>
+      <p>${op.description}</p>
+
+    
+      <a href="${disabled ? "#" : op.link}"
+         class="btn ${disabled ? "disabled" : ""}">
+        ${disabled ? "قريباً" : "التسجيل في الفرصة"} <span>↗</span>
+      </a>
+    </div>
+  `;
+
+  container.appendChild(card);
+});
+
+</script>
+
+</body>
+</html>
