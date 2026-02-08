@@ -8,6 +8,24 @@
  
     }
 
+    /* 1) شيل أي فراغ تحت الصفحة قبل الفوتر */
+main, .container{
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* 2) آخر سكشن قبل الفوتر */
+section:last-of-type
+.hero:last-child{
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 3) الفوتر نفسه */
+footer{
+  margin-top: 0 !important;
+}
+
     .foot{
     display:flex;
     gap:16px;
@@ -186,6 +204,7 @@ footer .left, footer .right{
   body{font-size:14px}
   h1{font-size:24px}
 }
+
 
 
 
