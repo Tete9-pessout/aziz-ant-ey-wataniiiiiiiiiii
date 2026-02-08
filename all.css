@@ -46,4 +46,146 @@
   box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
+/* =========================
+   Responsive Base (Global)
+   ========================= */
+
+/* صور وفيديوهات ما تتجاوز عرض الشاشة */
+img, video, iframe{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+/* منع النصوص من كسر التصميم */
+body{
+  overflow-x:hidden;
+  word-wrap:break-word;
+}
+
+/* حاوية عامة */
+.container, .wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 16px;
+}
+
+/* شبكات/كروت مرنة */
+.cards, .grid, .programs{
+  display:grid;
+  gap:16px;
+}
+
+/* افتراضي: 3 أعمدة على الكمبيوتر */
+.cards, .grid, .programs{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* أزرار وروابط: لا تتجاوز */
+a, button{
+  max-width:100%;
+}
+
+/* =========================
+   Navbar Responsive
+   ========================= */
+.nav .wrap, header nav, .nav{
+  flex-wrap:wrap;
+}
+
+.links, .nav-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* =========================
+   Gallery Slider Track (لو عندك)
+   ========================= */
+.gallery-wrap{
+  overflow:hidden;
+}
+.gallery-track{
+  display:flex;
+  gap:12px;
+  will-change:transform;
+}
+.gallery-track img{
+  width:220px;
+  height:140px;
+  object-fit:cover;
+  border-radius:16px;
+  flex:0 0 auto;
+}
+
+/* =========================
+   Footer Responsive
+   ========================= */
+footer{
+  flex-wrap:wrap;
+  gap:12px;
+  text-align:center;
+}
+footer .left, footer .right{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* =========================
+   Breakpoints
+   ========================= */
+
+/* تابلت */
+@media (max-width: 992px){
+  .cards, .grid, .programs{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  h1{font-size:28px}
+  h2{font-size:22px}
+
+  .gallery-track img{
+    width:200px;
+    height:130px;
+  }
+}
+
+/* موبايل */
+@media (max-width: 600px){
+  .cards, .grid, .programs{
+    grid-template-columns: 1fr;
+  }
+
+  .container, .wrap{
+    padding:0 12px;
+  }
+
+  .links a, .nav-links a{
+    width:100%;
+    text-align:center;
+    justify-content:center;
+  }
+
+  .hero, .card{
+    padding:16px;
+    border-radius:18px;
+  }
+
+  .gallery-track img{
+    width:170px;
+    height:115px;
+  }
+}
+
+/* شاشات صغيرة جداً */
+@media (max-width: 360px){
+  body{font-size:14px}
+  h1{font-size:24px}
+}
+
+
 
